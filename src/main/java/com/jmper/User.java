@@ -1,11 +1,15 @@
 package com.jmper;
 
+import org.apache.ibatis.type.Alias;
+
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
  * @author 郑和明
  * @version 1.0 (createTime:2017-12-23 20:16:12)
  */
+@Alias("user")
 public class User {
 
     private Integer id;
@@ -15,6 +19,7 @@ public class User {
     private String nickName;
     private String address;
     private String telephone;
+    private BigDecimal income;
     private Date createTime;
 
 
@@ -58,6 +63,14 @@ public class User {
         this.address = address;
     }
 
+    public BigDecimal getIncome() {
+        return income;
+    }
+
+    public void setIncome(BigDecimal income) {
+        this.income = income;
+    }
+
     public String getTelephone() {
         return telephone;
     }
@@ -83,6 +96,7 @@ public class User {
                 ", nickName='" + nickName + '\'' +
                 ", address='" + address + '\'' +
                 ", telephone='" + telephone + '\'' +
+                ", income=" + income +
                 ", createTime=" + createTime +
                 '}';
     }

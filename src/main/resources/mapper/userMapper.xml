@@ -6,7 +6,7 @@
     <sql id="Base_Column_List">
         id,user_name as userName,password,
         nick_name as nickName,address,
-        telephone,create_time as createTime
+        telephone,income,create_time as createTime
     </sql>
 
     <select id="selectOne" resultType="user">
