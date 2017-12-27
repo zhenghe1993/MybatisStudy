@@ -23,6 +23,20 @@ public class User {
     private Date createTime;
 
 
+    public User() {
+    }
+
+    public User(Integer id, String userName, String password, String nickName, String address, String telephone, BigDecimal income, Date createTime) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
+        this.nickName = nickName;
+        this.address = address;
+        this.telephone = telephone;
+        this.income = income;
+        this.createTime = createTime;
+    }
+
     public Integer getId() {
         return id;
     }

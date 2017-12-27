@@ -14,6 +14,14 @@ public interface UserMapper {
      * @return user类
      */
     User selectOne(Integer id);
-    @Select(value = "select * from t_user where nick_name=#{nickName}")
-    User selectUserByNickName(String nickName);
+
+    /**
+     * 插入数据
+     *
+     * @param user 用户对象
+     * @return id
+     */
+    int insertOne(User user);
+
+    int deleteUserById(int id);
 }

@@ -4,10 +4,28 @@
 
     <!-- 通用查询结果列-->
     <sql id="Base_Column_List">
-        id,user_name as userName,password,
-        nick_name as nickName,address,
-        telephone,income,create_time as createTime
+        id, user_name as userName, password,
+        nick_name as nickName, address,
+        telephone, income, create_time as createTime
     </sql>
+
+
+    <insert id="insertOne" parameterType="user" useGeneratedKeys="true" keyProperty="id">
+        INSERT
+        INTO
+            t_user (user_name, password, nick_name, address, telephone, income, create_time)
+        VALUES (#{userName}, #{password}, #{nickName},
+                #{address}, #{telephone}, #{income}, #{createTime})
+    </insert>
+
+    <delete id="deleteUserById" parameterType="int">
+        DELETE
+        FROM
+            t_user
+        WHERE
+            id = #{id}
+    </delete>
+
 
     <select id="selectOne" resultType="user">
         SELECT
